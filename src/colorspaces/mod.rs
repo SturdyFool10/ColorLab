@@ -15,6 +15,7 @@ pub mod rec2020;
 pub mod lab;
 pub mod lch;
 pub mod luv;
+pub mod oklch;
 
 // CSS UI spaces
 pub mod hwb;

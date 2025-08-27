@@ -11,6 +11,7 @@ pub use colorspaces::lab::Lab;
 pub use colorspaces::lch::Lch;
 pub use colorspaces::luv::Luv;
 pub use colorspaces::oklab::Oklab;
+pub use colorspaces::oklch::Oklch;
 pub use colorspaces::rec2020::Rec2020;
 pub use colorspaces::srgb::Srgb;
 pub use colorspaces::xyz::Xyz;

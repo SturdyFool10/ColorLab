@@ -1,6 +1,7 @@
 use crate::colorspaces::color::Color;
 use crate::colorspaces::colorspace::ColorSpace;
 use crate::colorspaces::hsv::Hsv;
+use serde::{Deserialize, Serialize};
 
 // Note: This implementation does not clamp output RGB values after HSV conversion.
 // If input values for w, b, or a are out of bounds, results may be unpredictable.
@@ -8,8 +9,8 @@ use crate::colorspaces::hsv::Hsv;
 // Documented for future maintainers.
 const EPSILON: f64 = 1e-10;
 
-/// HWB: Hue, Whiteness, Blackness (CSS Level 4)
-#[derive(Debug, Clone, Copy, PartialEq)]
+/// HWB: Hue, Whiteness, Blackness (CSS Level 4)
+#[derive(Debug, Clone, Copy, PartialEq, Serialize, Deserialize)]
 pub struct Hwb {
     pub h: f64,
     pub w: f64,

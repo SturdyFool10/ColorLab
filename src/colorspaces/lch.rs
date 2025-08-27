@@ -1,5 +1,6 @@
 use crate::colorspaces::colorspace::ColorSpace;
 use crate::colorspaces::lab::Lab;
+use serde::{Deserialize, Serialize};
 
 /// Cylindrical Lab: L, C, H (deg)
 ///
@@ -7,7 +8,7 @@ use crate::colorspaces::lab::Lab;
 /// - No clamping is performed on input or output values.
 /// - If `c` is very close to zero, hue math may be unstable.
 /// - Documented for future maintainers: consider clamping or epsilon checks if conversion issues arise.
-#[derive(Debug, Clone, Copy, PartialEq)]
+#[derive(Debug, Clone, Copy, PartialEq, Serialize, Deserialize)]
 pub struct Lch {
     pub l: f64,
     pub c: f64,

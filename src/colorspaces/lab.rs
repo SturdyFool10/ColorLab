@@ -1,5 +1,6 @@
 use crate::colorspaces::color::Color;
 use crate::colorspaces::colorspace::ColorSpace;
+use serde::{Deserialize, Serialize};
 
 // NOTE: Numerical stability risks documented below.
 // - Cube root and powf operations may produce NaN/Inf for negative or zero values.
@@ -7,7 +8,7 @@ use crate::colorspaces::colorspace::ColorSpace;
 // - Epsilon checks are added to avoid division by zero and unstable roots.
 
 /// CIE Lab (D65) — L∈[0,100], a∈[-∞,∞], b∈[-∞,∞]
-#[derive(Debug, Clone, Copy, PartialEq)]
+#[derive(Debug, Clone, Copy, PartialEq, Serialize, Deserialize)]
 pub struct Lab {
     pub l: f64,
     pub a: f64,

@@ -1,8 +1,9 @@
 use crate::colorspaces::color::Color;
 use crate::colorspaces::colorspace::ColorSpace;
+use serde::{Deserialize, Serialize};
 
-/// CIE L*u*v* (D65)
-#[derive(Debug, Clone, Copy, PartialEq)]
+/// CIE L*u*v* (D65)
+#[derive(Debug, Clone, Copy, PartialEq, Serialize, Deserialize)]
 pub struct Luv {
     pub l: f64,
     pub u: f64,

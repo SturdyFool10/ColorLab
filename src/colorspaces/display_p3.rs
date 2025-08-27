@@ -1,8 +1,9 @@
 use crate::colorspaces::color::Color;
 use crate::colorspaces::colorspace::ColorSpace;
+use serde::{Deserialize, Serialize};
 
 /// Display P3 (DCI‑P3 primaries + D65 white, sRGB γ)
-#[derive(Debug, Clone, Copy, PartialEq)]
+#[derive(Debug, Clone, Copy, PartialEq, Serialize, Deserialize)]
 pub struct DisplayP3 {
     pub r: f64,
     pub g: f64,

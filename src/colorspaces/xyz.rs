@@ -1,8 +1,9 @@
 use crate::colorspaces::color::Color;
 use crate::colorspaces::colorspace::ColorSpace;
+use serde::{Deserialize, Serialize};
 
-/// CIE XYZ with Observer=2°, Illuminant=D65
-#[derive(Debug, Clone, Copy, PartialEq)]
+/// CIE XYZ with Observer=2°, Illuminant=D65
+#[derive(Debug, Clone, Copy, PartialEq, Serialize, Deserialize)]
 pub struct Xyz {
     pub x: f64,
     pub y: f64,

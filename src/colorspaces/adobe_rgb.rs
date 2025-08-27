@@ -1,5 +1,6 @@
 use crate::colorspaces::color::Color;
 use crate::colorspaces::colorspace::ColorSpace;
+use serde::{Deserialize, Serialize};
 
 // NOTE: Numerical stability risks:
 // - powf operations can produce NaN for negative bases.
@@ -7,8 +8,8 @@ use crate::colorspaces::colorspace::ColorSpace;
 // - Epsilon checks added for powf safety.
 const EPSILON: f64 = 1e-10;
 
-/// Adobe RGB (1998), D65 white, gamma ≈ 2.19921875
-#[derive(Debug, Clone, Copy, PartialEq)]
+/// Adobe RGB (1998), D65 white, gamma ≈ 2.19921875
+#[derive(Debug, Clone, Copy, PartialEq, Serialize, Deserialize)]
 pub struct AdobeRgb {
     pub r: f64,
     pub g: f64,

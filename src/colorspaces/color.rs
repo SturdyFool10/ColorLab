@@ -1,6 +1,8 @@
+use serde::{Deserialize, Serialize};
+
 /// The main color struct, supporting HDR and multiple color spaces.
 /// Internally stores color as linear RGBA with f32 components.
-#[derive(Debug, Clone, Copy, PartialEq, Default)]
+#[derive(Debug, Clone, Copy, PartialEq, Default, Serialize, Deserialize)]
 pub struct Color {
     /// Red channel (linear, 0.0+ for HDR)
     pub r: f64,

@@ -1,9 +1,10 @@
 /// Oklab color space and conversion to/from linear RGB (Color).
 use crate::colorspaces::color::Color;
 use crate::colorspaces::colorspace::ColorSpace;
+use serde::{Deserialize, Serialize};
 
 /// Oklab color space (perceptual, 0.0-1.0 for L, usually -0.5..0.5 for a/b, 0.0-1.0 for alpha)
-#[derive(Debug, Clone, Copy, PartialEq, Default)]
+#[derive(Debug, Clone, Copy, PartialEq, Default, Serialize, Deserialize)]
 pub struct Oklab {
     pub l: f64,
     pub a: f64,

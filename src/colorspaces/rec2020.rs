@@ -1,8 +1,9 @@
 use crate::colorspaces::color::Color;
 use crate::colorspaces::colorspace::ColorSpace;
+use serde::{Deserialize, Serialize};
 
-/// Rec.2020 RGB (D65), gamma ≈ 2.4 for SDR
-#[derive(Debug, Clone, Copy, PartialEq)]
+/// Rec.2020 RGB (D65), gamma ≈ 2.4 for SDR
+#[derive(Debug, Clone, Copy, PartialEq, Serialize, Deserialize)]
 pub struct Rec2020 {
     pub r: f64,
     pub g: f64,

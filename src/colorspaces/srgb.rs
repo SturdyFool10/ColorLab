@@ -1,5 +1,7 @@
+use serde::{Deserialize, Serialize};
+
 /// sRGB color space (non-linear, 0.0-1.0)
-#[derive(Debug, Clone, Copy, PartialEq, Default)]
+#[derive(Debug, Clone, Copy, PartialEq, Default, Serialize, Deserialize)]
 
 pub struct Srgb {
     pub r: f64,

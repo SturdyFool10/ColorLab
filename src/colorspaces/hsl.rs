@@ -1,5 +1,6 @@
 use crate::colorspaces::color::Color;
 use crate::colorspaces::colorspace::ColorSpace;
+use serde::{Deserialize, Serialize};
 
 // NOTE: This implementation does not clamp input/output values.
 // Documented risks: If input values are outside [0,1] for s, l, or a, or [0,360) for h, output RGB may be out of bounds.
@@ -7,7 +8,7 @@ use crate::colorspaces::colorspace::ColorSpace;
 
 const EPSILON: f64 = 1e-10;
 
-#[derive(Debug, Clone, Copy, PartialEq)]
+#[derive(Debug, Clone, Copy, PartialEq, Serialize, Deserialize)]
 pub struct Hsl {
     /// Hue in degrees [0, 360)
     pub h: f64,

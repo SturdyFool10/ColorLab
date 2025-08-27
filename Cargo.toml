@@ -1,7 +1,17 @@
 [package]
-name = "Colorlab"
+name = "colorlab"
 version = "0.1.0"
 edition = "2024"
+authors = [""]
+description = "A color manipulation library with support for various color spaces"
+license = "MIT"
+repository = ""
+keywords = ["color", "conversion", "colorspace"]
+categories = ["graphics", "visualization"]
+
+[lib]
+name = "colorlab"
+path = "src/lib.rs"
 
 [dependencies]
 serde = { version = "1.0.219", features = ["derive"] }
